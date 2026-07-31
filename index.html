@@ -88,72 +88,49 @@
             text-align: left;
         }
         .bio-en {
-            margin-top: 30px;
+            margin-top: 40px;
             color: #666;
             font-size: 0.85rem;
             line-height: 1.8;
-        }
-        .history-title { 
-            font-weight: 500; 
-            margin-top: 60px; 
-            margin-bottom: 25px; 
-            font-size: 0.85rem;
-            color: #444;
-            border-bottom: 1px solid #eee;
-            display: block;
-            padding-bottom: 5px;
-        }
-        .history-list { 
-            font-size: 0.85rem; 
-            color: #333; 
-            margin-bottom: 25px; 
-            padding: 0;
-        }
-        .history-list-en { 
-            color: #666; 
-            font-size: 0.8rem; 
-            margin-top: 4px; 
-            display: block;
-            width: 100%;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
         }
 
-        /* --- Schedule (演奏会ありver) --- */
-        .schedule-box {
+        /* --- Schedule --- */
+        .schedule-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
             max-width: 650px;
             margin: 0 auto;
+        }
+        .schedule-box {
             padding: 40px;
             border: 1px solid #eee;
             background: #fff;
-            text-align: center;
+            text-align: left;
         }
         .concert-title {
             font-size: 1.1rem;
             font-weight: 500;
             color: #2c2c2c;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             letter-spacing: 0.05em;
+            line-height: 1.5;
+        }
+        .concert-subtitle {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 400;
         }
         .concert-info-text {
             font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 30px;
+            color: #555;
             line-height: 1.8;
         }
-        .teket-button {
-            display: inline-block;
-            padding: 14px 35px;
-            background: #2c2c2c;
-            color: #fff;
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            transition: background 0.3s, opacity 0.3s;
-        }
-        .teket-button:hover {
-            background: #555;
-            opacity: 1;
-        }
 
-        /* --- Movie (YouTube動画複数配置用) --- */
+        /* --- Movie --- */
         .movie-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,63 +210,52 @@
         
         <div class="bio-ja">
             <p>
-                埼玉県さいたま市出身。9歳より打楽器を始める。埼玉県立伊奈学園総合高等学校を経て、洗足学園音楽大学を卒業。現在は同大学大学院修士課程1年に在学。
+                埼玉県さいたま市出身。9歳より打楽器を始める。埼玉県立伊奈学園総合高等学校を経て、洗足学園音楽大学を卒業。現在は同大学大学院修士課程1年に在学。中学校教諭一種免許状（音楽）、高等学校教諭一種免許状（音楽）取得。
             </p>
             <p>
-                オーケストラや吹奏楽を中心に演奏活動を展開するほか、中高吹奏楽部での後進の指導にもあたる。また、西洋打楽器の研鑽を積む一方で、スティールパンやガムラン、マーチングパーカッション、和太鼓なども学ぶ。
+                オーケストラや吹奏楽を中心に、特にティンパニ奏者として精力的に演奏活動を展開するほか、中高吹奏楽部での後進の指導にもあたる。また、西洋打楽器全般の研鑽を積む一方で、スティールパンやガムラン、マーチングパーカッション、和太鼓なども幅広く学ぶ。
+            </p>
+            <p>
+                これまでにティンパニ・打楽器を井手上達、塩田拓郎、秋田孝則、綱川淳美、渡邉弥生の各氏に、室内楽を野本洋介、山本晶子の各氏に、和太鼓を林英哲氏に師事。チェコ・フィルハーモニー管弦楽団首席ティンパニ奏者 Michael Kroutil氏のマスタークラスを受講。
             </p>
         </div>
 
         <div class="bio-en">
             <p>
-                Born in Saitama, Japan. Began playing percussion at the age of nine. After attending Ina Gakuen Comprehensive High School, he graduated from Senzoku Gakuen College of Music. He is currently a first-year graduate student at Senzoku Gakuen College of Music.
+                Born in Saitama, Japan. Began playing percussion at the age of nine. After attending Ina Gakuen Comprehensive High School, he graduated from Senzoku Gakuen College of Music. He is currently a first-year graduate student at Senzoku Gakuen College of Music. Holds Junior High School and High School Teacher's Licenses for Music.
             </p>
             <p>
-                He is active as a percussionist and timpanist in various orchestras and wind ensembles, while also teaching junior high and high school students. In addition to classical Western percussion, he has studied steelpan, gamelan, marching percussion, and wadaiko.
+                He is actively engaged in performances mainly in orchestras and wind ensembles with a primary focus on the timpani, while also teaching junior high and high school students. In addition to classical Western percussion, he has studied steelpan, gamelan, marching percussion, and wadaiko.
             </p>
-        </div>
-        
-        <div class="history-title">師事歴・資格 / Teachers & Qualifications</div>
-        
-        <div class="history-list">
-            打楽器：井手上達、塩田拓郎、秋田孝則、綱川淳美、渡邉弥生の各氏に師事。
-            <span class="history-list-en">Percussion: Studied under Toru Ideue, Takuro Shiota, Takanori Akita, Junmi Tsunakawa, and Mia Watanabe.</span>
-        </div>
-
-        <div class="history-list">
-            室内楽：野本洋介、山本晶子の各氏に師事。
-            <span class="history-list-en">Chamber Music: Studied under Yosuke Nomoto and Akiko Yamamoto.</span>
-        </div>
-
-        <div class="history-list">
-            和太鼓：林英哲氏に師事。
-            <span class="history-list-en">Wadaiko: Studied under Eitetsu Hayashi.</span>
-        </div>
-
-        <div class="history-list">
-            チェコ・フィルハーモニー管弦楽団首席ティンパニ奏者 Michael Kroutil氏のマスタークラスを受講。
-            <span class="history-list-en">Attended a masterclass by Michael Kroutil, Principal Timpanist of the Czech Philharmonic.</span>
-        </div>
-
-        <div class="history-list">
-            中学校教諭第一種免許状（音楽）、高等学校教諭第一種免許状（音楽）　取得。
-            <span class="history-list-en">Holds Junior High school and High school teacher's Licenses for music.</span>
+            <p>
+                Studied Timpani & Percussion under Toru Ideue, Takuro Shiota, Takanori Akita, Junmi Tsunakawa, and Mio Watanabe; Chamber Music under Yosuke Nomoto and Akiko Yamamoto; and Wadaiko under Eitetsu Hayashi. He also attended a masterclass led by Michael Kroutil, Principal Timpanist of the Czech Philharmonic.
+            </p>
         </div>
     </div>
 </section>
 
 <section id="schedule">
     <h2>Schedule</h2>
-    <div class="schedule-box">
-        <div class="concert-title">第17回大学院管弦楽団定期演奏会</div>
+    <div class="schedule-list">
         
-        <div class="concert-info-text">
-            日時：2026年6月28日（日） 開場 13:30 / 開演 14:00<br>
-            会場：洗足学園音楽大学内　前田ホール<br>
-            
+        <!-- 1つ目の演奏会 -->
+        <div class="schedule-box">
+            <div class="concert-title">2026 セイジ・オザワ 松本フェスティバル<br>小澤征爾音楽塾オーケストラ</div>
+            <div class="concert-subtitle">子どものための音楽会 –交響曲とオペラハイライト–</div>
+            <div class="concert-info-text">
+                日程：2026年8月20日(木) - 8月28日(金)
+            </div>
         </div>
-        
-        <a href="https://teket.jp/1118/69340" target="_blank" class="teket-button">TICKET & DETAILS</a>
+
+        <!-- 2つ目の演奏会 -->
+        <div class="schedule-box">
+            <div class="concert-title">大学院コンチェルトの調べ</div>
+            <div class="concert-info-text">
+                日時：2026年9月26日(土) 開場 13:30 / 開演 14:00<br>
+                会場：洗足学園 前田ホール
+            </div>
+        </div>
+
     </div>
 </section>
 
