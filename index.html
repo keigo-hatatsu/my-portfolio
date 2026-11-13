@@ -1,307 +1,957 @@
 <!DOCTYPE html>
+
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>畑津 圭吾 | Keigo Hatatsu - Timpani & Percussion</title>
 
-    <!-- Google アナリティクスのコードを発行したら、ここに貼り付けてください -->
+<meta charset="UTF-8">
 
-    <style>
-        /* --- 基本デザイン設定 --- */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", "Meiryo", sans-serif;
-            color: #2c2c2c;
-            background-color: #f9f9f7; /* オフホワイト */
-            line-height: 2;
-            letter-spacing: 0.08em;
-            scroll-behavior: smooth;
-        }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        a { color: #2c2c2c; text-decoration: none; transition: 0.4s; }
-        a:hover { opacity: 0.4; }
+<meta name="description" content="畑津圭吾（Keigo Hatatsu）公式ホームページ。ティンパニ・打楽器奏者。プロフィール、演奏会情報、演奏動画、お問い合わせ。">
 
-        /* --- ナビゲーション --- */
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(249, 249, 247, 0.9);
-            padding: 25px 0;
-            text-align: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-        nav a {
-            margin: 0 15px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 400;
-        }
+<title>畑津 圭吾 | Keigo Hatatsu - Timpani & Percussion</title>
 
-        /* --- セクション共通 --- */
-        section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 160px 20px;
-        }
-        h2 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 80px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            color: #888;
-        }
+<!-- Google Analyticsのコードはここに追加 -->
 
-        /* --- HOME --- */
-        #home {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-img {
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 60px;
-        }
-        .hero-img img { width: 100%; height: auto; display: block; }
-        .name-ja { font-size: 1.8rem; font-weight: 400; margin: 0; letter-spacing: 0.2em; }
-        .name-en { font-size: 0.9rem; font-weight: 300; color: #999; letter-spacing: 0.3em; text-transform: uppercase; margin-top: 10px; }
-        .instrument { font-size: 0.8rem; color: #aaa; font-style: italic; margin-top: 15px; }
+<style>
 
-        /* --- Profile (日英併記) --- */
-        .profile-content { max-width: 650px; margin: 0 auto; font-size: 0.9rem; }
-        .profile-photo { text-align: center; margin-bottom: 60px; }
-        .profile-photo img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        
-        .bio-ja p, .bio-en p {
-            margin: 0 0 20px 0;
-            padding: 0;
-            text-align: left;
-        }
-        .bio-en {
-            margin-top: 40px;
-            color: #666;
-            font-size: 0.85rem;
-            line-height: 1.8;
-            border-top: 1px solid #eee;
-            padding-top: 30px;
-        }
+html {
 
-        /* --- Schedule --- */
-        .schedule-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-        .schedule-box {
-            padding: 40px;
-            border: 1px solid #eee;
-            background: #fff;
-            text-align: left;
-        }
-        .concert-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-            letter-spacing: 0.05em;
-            line-height: 1.5;
-        }
-        .concert-subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-        .concert-info-text {
-            font-size: 0.85rem;
-            color: #555;
-            line-height: 1.8;
-        }
+    scroll-behavior: smooth;
 
-        /* --- Movie --- */
-        .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 の比率を維持 */
-            background: #f2f2f2;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+}
 
-        /* --- Contact --- */
-        .contact-box { max-width: 500px; margin: 0 auto; }
-        .contact-info { margin-bottom: 40px; font-size: 0.85rem; text-align: center; color: #666; }
-        .sns-links { margin: 20px 0 40px; display: flex; justify-content: center; gap: 30px; font-size: 0.75rem; }
-        
-        form input, form textarea {
-            width: 100%; padding: 18px; margin-bottom: 15px;
-            border: none; border-bottom: 1px solid #ddd; background: transparent; 
-            box-sizing: border-box; font-family: inherit; font-size: 0.9rem;
-            outline: none; transition: border-color 0.3s;
-        }
-        form input:focus, form textarea:focus { border-bottom-color: #2c2c2c; }
-        form button {
-            width: 100%; padding: 20px; background: #2c2c2c; color: #fff;
-            border: none; cursor: pointer; letter-spacing: 0.3em; font-size: 0.8rem;
-            margin-top: 20px; transition: background 0.3s;
-        }
-        form button:hover { background: #555; }
+body {
 
-        footer { text-align: center; padding: 100px 0 40px; font-size: 0.6rem; color: #ccc; letter-spacing: 0.2em; }
+    margin: 0;
 
-        @media (max-width: 768px) {
-            nav a { margin: 0 8px; font-size: 0.6rem; }
-            section { padding: 100px 20px; }
-            .name-ja { font-size: 1.5rem; }
-            .schedule-box { padding: 30px 20px; }
-        }
-    </style>
+    padding: 0;
+
+    font-family: -apple-system, BlinkMacSystemFont,
+
+        "Segoe UI", Roboto, "Helvetica Neue", Arial,
+
+        "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+
+        "BIZ UDPGothic", "Meiryo", sans-serif;
+
+    color: #2c2c2c;
+
+    background: #f9f9f7;
+
+    line-height: 2;
+
+    letter-spacing: 0.08em;
+
+}
+
+a {
+
+    color: #2c2c2c;
+
+    text-decoration: none;
+
+    transition: opacity 0.4s;
+
+}
+
+a:hover {
+
+    opacity: 0.4;
+
+}
+
+/* NAVIGATION */
+
+nav {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(249,249,247,0.9);
+
+    padding: 25px 0;
+
+    text-align: center;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    box-sizing: border-box;
+
+}
+
+nav a {
+
+    margin: 0 15px;
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.15em;
+
+}
+
+section {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 160px 20px;
+
+    box-sizing: border-box;
+
+    scroll-margin-top: 70px;
+
+}
+
+h2 {
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    margin-bottom: 80px;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+    color: #888;
+
+}
+
+/* HOME */
+
+#home {
+
+    min-height: 100vh;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+.hero-img {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin-bottom: 60px;
+
+}
+
+.hero-img img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+.name-ja {
+
+    font-size: 1.8rem;
+
+    font-weight: 400;
+
+    margin: 0;
+
+    letter-spacing: 0.2em;
+
+}
+
+.name-en {
+
+    font-size: 0.9rem;
+
+    font-weight: 300;
+
+    color: #999;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+    margin-top: 10px;
+
+}
+
+.instrument {
+
+    font-size: 0.8rem;
+
+    color: #aaa;
+
+    font-style: italic;
+
+    margin-top: 15px;
+
+}
+
+/* PROFILE */
+
+.profile-content {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 0.9rem;
+
+}
+
+.profile-photo {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.profile-photo img {
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
+
+.bio-ja p,
+
+.bio-en p {
+
+    margin: 0 0 20px;
+
+    text-align: left;
+
+}
+
+.bio-en {
+
+    margin-top: 40px;
+
+    color: #666;
+
+    font-size: 0.85rem;
+
+    line-height: 1.8;
+
+    border-top: 1px solid #eee;
+
+    padding-top: 30px;
+
+}
+
+/* SCHEDULE */
+
+.schedule-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+}
+
+.schedule-box {
+
+    padding: 40px;
+
+    border: 1px solid #eee;
+
+    background: #fff;
+
+    text-align: left;
+
+}
+
+.concert-date {
+
+    font-size: 0.75rem;
+
+    color: #999;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 12px;
+
+}
+
+.concert-title {
+
+    font-size: 1.1rem;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+
+}
+
+.concert-subtitle {
+
+    font-size: 0.9rem;
+
+    color: #666;
+
+    margin-bottom: 15px;
+
+}
+
+.concert-info-text {
+
+    font-size: 0.85rem;
+
+    color: #555;
+
+    line-height: 1.8;
+
+}
+
+/* MOVIE */
+
+.movie-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+.video-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 56.25%;
+
+    background: #f2f2f2;
+
+}
+
+.video-wrapper iframe {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+}
+
+/* CONTACT */
+
+.contact-box {
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+}
+
+.contact-info {
+
+    margin-bottom: 40px;
+
+    font-size: 0.85rem;
+
+    text-align: center;
+
+    color: #666;
+
+    overflow-wrap: anywhere;
+
+}
+
+.sns-links {
+
+    margin: 20px 0 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    font-size: 0.75rem;
+
+}
+
+form input,
+
+form textarea {
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    border: none;
+
+    border-bottom: 1px solid #ddd;
+
+    background: transparent;
+
+    box-sizing: border-box;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    outline: none;
+
+}
+
+form input:focus,
+
+form textarea:focus {
+
+    border-bottom-color: #2c2c2c;
+
+}
+
+form button {
+
+    width: 100%;
+
+    padding: 20px;
+
+    background: #2c2c2c;
+
+    color: #fff;
+
+    border: none;
+
+    cursor: pointer;
+
+    letter-spacing: 0.3em;
+
+    font-size: 0.8rem;
+
+    margin-top: 20px;
+
+}
+
+form button:hover {
+
+    background: #555;
+
+}
+
+footer {
+
+    text-align: center;
+
+    padding: 100px 20px 40px;
+
+    font-size: 0.6rem;
+
+    color: #aaa;
+
+    letter-spacing: 0.2em;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    nav {
+
+        padding: 20px 5px;
+
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 8px 0;
+
+    }
+
+    nav a {
+
+        margin: 0 8px;
+
+        font-size: 0.6rem;
+
+    }
+
+    section {
+
+        padding: 100px 20px;
+
+    }
+
+    #home {
+
+        padding-top: 120px;
+
+    }
+
+    .hero-img {
+
+        margin-bottom: 40px;
+
+    }
+
+    .name-ja {
+
+        font-size: 1.5rem;
+
+    }
+
+    .schedule-box {
+
+        padding: 30px 20px;
+
+    }
+
+    .movie-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    h2 {
+
+        margin-bottom: 60px;
+
+    }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
+
     <a href="#home">Home</a>
+
     <a href="#profile">Profile</a>
+
     <a href="#schedule">Schedule</a>
+
     <a href="#movie">Movie</a>
+
     <a href="#contact">Contact</a>
+
 </nav>
 
+<!-- HOME -->
+
 <section id="home">
+
     <div class="hero-img">
+
         <img src="images/main.png" alt="Keigo Hatatsu">
+
     </div>
+
     <h1 class="name-ja">畑津 圭吾</h1>
+
     <div class="name-en">Keigo Hatatsu</div>
-    <div class="instrument">Timpani & Percussion</div>
+
+    <div class="instrument">Timpani &amp; Percussion</div>
+
 </section>
+
+<!-- PROFILE -->
 
 <section id="profile">
+
     <h2>Profile</h2>
+
     <div class="profile-content">
+
         <div class="profile-photo">
+
             <img src="images/profile.png" alt="Keigo Hatatsu">
+
         </div>
-        
+
+        <!-- 日本語プロフィール -->
+
         <div class="bio-ja">
+
             <p>
+
                 埼玉県さいたま市出身。9歳より打楽器を始める。埼玉県立伊奈学園総合高等学校を経て、洗足学園音楽大学を卒業。現在は同大学大学院修士課程1年に在学。中学校教諭一種免許状（音楽）、高等学校教諭一種免許状（音楽）取得。
+
             </p>
+
             <p>
-                オーケストラや吹奏楽を中心に、特にティンパニ奏者として精力的に演奏活動を展開するほか、中高吹奏楽部での後進の指導にもあたる。また、西洋打楽器全般の研鑽を積む一方で、スティールパンやガムラン、マーチングパーカッション、和太鼓なども幅広く学ぶ。セイジ・オザワ松本フェスティバルにて小澤征爾音楽塾 子どものための音楽会 交響曲とオペラハイライトに出演。
+
+                オーケストラや吹奏楽を中心に、特にティンパニ奏者として精力的に演奏活動を展開するほか、中高吹奏楽部での後進の指導にもあたる。また、西洋打楽器全般の研鑽を積む一方で、スティールパンやガムラン、マーチングパーカッション、和太鼓なども幅広く学ぶ。2026年、セイジ・オザワ松本フェスティバルにて小澤征爾音楽塾 子どものための音楽会「交響曲とオペラハイライト」に出演。
+
             </p>
+
             <p>
-                これまでにティンパニ・打楽器を井手上達、塩田拓郎、秋田孝則、綱川淳美、渡邉弥生の各氏に、室内楽を野本洋介、山本晶子の各氏に師事。チェコ・フィルハーモニー管弦楽団首席ティンパニ奏者 Michael Kroutil氏のマスタークラスを受講。
+
+                これまでにティンパニ・打楽器を井手上達、塩田拓郎、秋田孝則、綱川淳美、渡邉弥生の各氏に、室内楽を野本洋介、山本晶子の各氏に師事。チェコ・フィルハーモニー管弦楽団首席ティンパニ奏者Michael Kroutil氏、バイエルン放送交響楽団首席ティンパニ奏者Raymond Curfs氏、ロイヤル・コンセルトヘボウ管弦楽団のBart Jansen氏のマスタークラスを受講。
+
             </p>
+
         </div>
+
+        <!-- English Biography -->
 
         <div class="bio-en">
+
             <p>
+
                 Born in Saitama, Japan. Began playing percussion at the age of nine. After attending Ina Gakuen Comprehensive High School, he graduated from Senzoku Gakuen College of Music. He is currently a first-year graduate student at Senzoku Gakuen College of Music. Holds Junior High School and High School Teacher's Licenses for Music.
+
             </p>
+
             <p>
-                He is actively engaged in performances mainly in orchestras and wind ensembles with a primary focus on the timpani, while also teaching junior high and high school students. In addition to classical Western percussion, he has studied steelpan, gamelan, marching percussion, and wadaiko. Performed in the Seiji Ozawa Matsumoto Festival as a member of the Seiji Ozawa Music Academy Orchestra for the Concert for Children Symphony and Opera Highlights.
+
+                He is actively engaged in performances mainly in orchestras and wind ensembles with a primary focus on the timpani, while also teaching junior high and high school students. In addition to classical Western percussion, he has studied steelpan, gamelan, marching percussion, and wadaiko. In 2026, he performed at the Seiji Ozawa Matsumoto Festival as a member of the Seiji Ozawa Music Academy Orchestra for the Concert for Children: Symphony and Opera Highlights.
+
             </p>
+
             <p>
-                Studied Timpani & Percussion under Toru Ideue, Takuro Shiota, Takanori Akita, Junmi Tsunakawa, and Mio Watanabe; and Chamber Music under Yosuke Nomoto and Akiko Yamamoto. He also attended a masterclass led by Michael Kroutil, Principal Timpanist of the Czech Philharmonic.
+
+                He has studied timpani and percussion under Toru Ideue, Takuro Shiota, Takanori Akita, Junmi Tsunakawa, and Mio Watanabe, and chamber music under Yosuke Nomoto and Akiko Yamamoto. He has attended masterclasses with Michael Kroutil, Principal Timpanist of the Czech Philharmonic; Raymond Curfs, Principal Timpanist of the Bavarian Radio Symphony Orchestra; and Bart Jansen of the Royal Concertgebouw Orchestra.
+
             </p>
+
         </div>
+
     </div>
+
 </section>
+
+<!-- SCHEDULE -->
 
 <section id="schedule">
+
     <h2>Schedule</h2>
+
     <div class="schedule-list">
-        
-        <!-- 演奏会：大学院コンチェルトの調べ -->
+
+        <!-- 宗教音楽の祭典 -->
+
         <div class="schedule-box">
-            <div class="concert-title">大学院コンチェルトの調べ</div>
-            <div class="concert-info-text">
-                日時：2026年9月26日(土) 開場 13:30 / 開演 14:00<br>
-                会場：洗足学園 前田ホール
+
+            <div class="concert-date">
+
+                2026.11.21 SAT
+
             </div>
+
+            <div class="concert-title">
+
+                宗教音楽の祭典
+
+            </div>
+
+            <div class="concert-subtitle">
+
+                大学院オラトリオアンサンブル演奏会
+
+            </div>
+
+            <div class="concert-info-text">
+
+                日時：2026年11月21日(土)<br>
+
+                開場 13:30 / 開演 14:00<br>
+
+                会場：洗足学園 前田ホール<br>
+
+                <br>
+
+                D. ブクステフーデ：
+
+                Salve Jesu, patris gnate unigenite
+
+                BuxWV 94<br>
+
+                J. S. バッハ：
+
+                マニフィカト 変ホ長調 BWV 243a<br>
+
+                <br>
+
+                指揮：青木洋也<br>
+
+                入場無料・要予約
+
+            </div>
+
+        </div>
+
+        <!-- 学園オペラ -->
+
+        <div class="schedule-box">
+
+            <div class="concert-date">
+
+                2027.03.02 TUE
+
+            </div>
+
+            <div class="concert-title">
+
+                2026年度 学園オペラ
+
+            </div>
+
+            <div class="concert-subtitle">
+
+                W. A. モーツァルト<br>
+
+                歌劇《ドン・ジョヴァンニ》
+
+            </div>
+
+            <div class="concert-info-text">
+
+                日時：2027年3月2日(火)<br>
+
+                開演 14:00<br>
+
+                会場：洗足学園 前田ホール<br>
+
+                <br>
+
+                指揮：佐藤宏充<br>
+
+                演出：搞 翔平
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
+
+<!-- MOVIE -->
 
 <section id="movie">
+
     <h2>Movie</h2>
+
     <div class="movie-grid">
-        
+
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/yUO2BpOrTPM" allowfullscreen></iframe>
+
+            <iframe
+
+                src="https://www.youtube.com/embed/yUO2BpOrTPM"
+
+                title="Performance Video 1"
+
+                loading="lazy"
+
+                allowfullscreen>
+
+            </iframe>
+
         </div>
 
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/apJfaPBusaQ" allowfullscreen></iframe>
+
+            <iframe
+
+                src="https://www.youtube.com/embed/apJfaPBusaQ"
+
+                title="Performance Video 2"
+
+                loading="lazy"
+
+                allowfullscreen>
+
+            </iframe>
+
         </div>
 
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/1U4QlGVEqoQ" allowfullscreen></iframe>
+
+            <iframe
+
+                src="https://www.youtube.com/embed/1U4QlGVEqoQ"
+
+                title="Performance Video 3"
+
+                loading="lazy"
+
+                allowfullscreen>
+
+            </iframe>
+
         </div>
 
     </div>
+
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact">
+
     <h2>Contact</h2>
+
     <div class="contact-box">
+
         <div class="contact-info">
+
             演奏依頼、レッスン、その他お問い合わせ<br>
-            <a href="mailto:Hatatsu.keigo.perc.04@gmail.com">Hatatsu.keigo.perc.04@gmail.com</a>
+
+            <a href="mailto:Hatatsu.keigo.perc.04@gmail.com">
+
+                Hatatsu.keigo.perc.04@gmail.com
+
+            </a>
+
         </div>
 
         <div class="sns-links">
-            <a href="https://x.com/hatatsu_keigo" target="_blank">X (Twitter)</a>
-            <a href="https://www.instagram.com/hatatsu.keigo" target="_blank">Instagram</a>
+
+            <a href="https://x.com/hatatsu_keigo"
+
+               target="_blank"
+
+               rel="noopener noreferrer">
+
+                X (Twitter)
+
+            </a>
+
+            <a href="https://www.instagram.com/hatatsu.keigo"
+
+               target="_blank"
+
+               rel="noopener noreferrer">
+
+                Instagram
+
+            </a>
+
         </div>
 
         <form action="https://api.staticforms.xyz/submit" method="POST">
-            <input type="hidden" name="accessKey" value="sf_d0912910603cfedf4c058308">
-            <input type="hidden" name="subject" value="Contact from Portfolio Website">
-            
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" rows="5" required></textarea>
-            
-            <input type="text" name="honeypot" style="display:none">
-            <button type="submit">SEND MESSAGE</button>
+
+            <input type="hidden"
+
+                   name="accessKey"
+
+                   value="sf_d0912910603cfedf4c058308">
+
+            <input type="hidden"
+
+                   name="subject"
+
+                   value="Contact from Portfolio Website">
+
+            <input type="text"
+
+                   name="name"
+
+                   placeholder="Name"
+
+                   required>
+
+            <input type="email"
+
+                   name="email"
+
+                   placeholder="Email"
+
+                   required>
+
+            <textarea name="message"
+
+                      placeholder="Message"
+
+                      rows="5"
+
+                      required></textarea>
+
+            <input type="text"
+
+                   name="honeypot"
+
+                   style="display:none">
+
+            <button type="submit">
+
+                SEND MESSAGE
+
+            </button>
+
         </form>
+
     </div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
+
     &copy; 2026 Keigo Hatatsu.
+
 </footer>
 
 </body>
+
 </html>
